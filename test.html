@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Sidebar Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide sidebar by default */
+  width: 250px;
+  height: 100%;
+  background-color: #e6dbdb;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 80px 0 0 20px;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+  margin-left: 0;
+  transition: 0.4s;
+}
+
+/* Active State for Sidebar */
+.sidebar.active {
+  left: 0;
+}
+
+/* Hamburger Animation */
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+</style>
+<body>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>Click the hamburger icon to open the menu.</p>
+  </div>
+
+  <script>
+    // Get DOM elements
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+
+// Toggle sidebar and hamburger animation
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+  </script>
+</body>
+</html>
