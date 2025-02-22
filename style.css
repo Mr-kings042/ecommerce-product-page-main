@@ -214,7 +214,7 @@ font-weight: 600;
       position: fixed;
       top: 0;
       left: -250px; 
-      width: 70%;
+      width: 69%;
       height: 100%;
       flex-direction: column;
       padding-top: 70px;
@@ -283,7 +283,9 @@ font-weight: 600;
 }
 .add-to-cart {
     margin-top: 30px;
+    margin-right: 20px;
     width: 100%;
+    align-items: center;
 }
 
   }
